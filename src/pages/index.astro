@@ -1,6 +1,6 @@
 ---
 import { Debug } from "astro/components";
-import BoothListe from "../komponenter/Booth_liste.astro";
+import ProgramListe from "../komponenter/program_liste.astro";
 
 const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
 
@@ -19,7 +19,7 @@ const data = await response.json();
 <layout title="restauranter">
   <!-- <Debug {data} /> -->
   <main>
-    {data.map((restaurant) => <BoothListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop}/>)}
+    {data.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop}/>)}
   </main>
 </layout>
 
