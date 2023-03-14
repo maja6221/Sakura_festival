@@ -19,6 +19,10 @@ const data = await response.json();
 <layout title="restauranter">
   <!-- <Debug {data} /> -->
   <main>
-    {data.map((restaurant) => <BoothListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} />)}
+    {data.map((restaurant) => <BoothListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop}/>)}
   </main>
 </layout>
+
+<style>
+
+</style>
