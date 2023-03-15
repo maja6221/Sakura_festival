@@ -16,13 +16,27 @@ const response = await fetch(url, options);
 const data = await response.json();
 ---
 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <title>Forside</title>
+  </head>
+  <body>
+    <Navigation />
+    <h1>Forside</h1>
+    <main></main>
+  </body>
+</html>
+
 <layout title="restauranter">
   <!-- <Debug {data} /> -->
   <main>
-    {data.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop}/>)}
+    {data.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
   </main>
 </layout>
 
-<style>
-
-</style>
+<style></style>
