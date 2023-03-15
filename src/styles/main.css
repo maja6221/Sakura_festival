@@ -1,0 +1,24 @@
+
+:root {
+    /* Farver */
+    --background-color: #F8ECEC;
+    --text-green: #156B4C;
+    --header-footer-color: #D3726B;
+    --box-index-color: #FFDDDD;
+    --text-pink: #A14343;  
+    --text-white: #fff;
+    --text-black: #000;
+
+  
+    /* Typografi */
+    --font-size-h2: 1.5rem;
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-tiny: 0.75rem;
+    --font-size-legal: 0.6875rem;
+  
+}
+
+.body {
+background-color: var(--background-color);
+}
