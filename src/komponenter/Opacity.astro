@@ -8,24 +8,51 @@
       <div class="middle">
         <div class="text"><a class="txt1" href="program.astro">Program</a></div>
       </div>
+      <div class="mobil_text">
+        <button class="button_mobil"><a class="link_mobil" href="program.astro">Program</a></button>
+        
+    </div>
     </div>
     <div class="container">
       <img src="Billeder/image10.jpeg" alt="Avatar" class="image" style="width: 100%" />
       <div class="middle">
         <div class="text"><a class="txt1" href="about.astro">About Us</a></div>
       </div>
+      <div class="mobil_text">
+        <button class="button_mobil"><a class="link_mobil" href="about.astro">About Us</a></button>
+    </div>
     </div>
     <div id="cafe-container" class="container">
       <img src="Billeder/image9.jpeg" alt="Avatar" class="image" style="width: 100%" />
       <div class="middle">
         <div class="text"><a class="txt1" href="booths.astro">Booths</a></div>
       </div>
+    <div class="mobil_text">
+        <button class="button_mobil"><a class="link_mobil" href="booths.astro">Booths</a></button>
+    </div>
     </div>
   </section>
 
-
   <style>
-   /* ----------------------opacity bokse--------------------- */
+
+:root {
+    /* Farver */
+    --background-color: #F8ECEC;
+    --text-green: #156B4C;
+    --header-footer-color: #D3726B;
+    --box-index-color: #FFDDDD;
+    --text-pink: #A14343;  
+    --text-white: #fff;
+    --text-black: #000;
+
+  
+}
+
+  /* ----------------------opacity bokse--------------------- */
+  
+  .mobil_text {
+    display: none;
+  }
   .container {
     position: relative;
     width: 100%;
@@ -34,7 +61,7 @@
     padding-bottom: 10px;
     
   }
-  
+
   .image {
     opacity: 1;
     display: block;
@@ -42,8 +69,9 @@
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+    
   }
-  
+
   .middle {
     transition: .5s ease;
     opacity: 0;
@@ -55,7 +83,7 @@
     text-align: center;
     
   }
-  
+
   .container:hover .image {
     opacity: 0.3;
   }
@@ -64,7 +92,7 @@
     opacity: 1;
     
   }
-  
+
   .text {
     background-color: var(--text-green);
     color: var(--text-white);
@@ -76,16 +104,14 @@
   }
   
   .grid_opacity {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    padding: 20px;
-    margin-inline: 14em;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-inline: 10em;
     margin-top: 5em;
     margin-bottom: 5em;
-
-   
     
   }
+
 
   .txt1 {
     text-decoration: none;
@@ -100,14 +126,100 @@
     .grid_opacity {
       display: grid;
       grid-template-columns: 1fr ;
-      
+      padding: 20px;
+    margin-inline: 1em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    
   
     }
   
+    .container {
+    position: relative;
+    width: 100%;
+    padding-inline: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     
   }
+
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    
+  }
+
+  .middle {
+   display: none;
+    
+  }
+
+  .container:hover .image {
+    opacity: 10;
+  }
+  
+  .container:hover .middle {
+    opacity: 0;
+    
+  }
+
+  .text {
+    display: none;
+  }
+  
+  
+
+  .txt1 {
+ display: none;
+  }
+
+  
+  .txt1:hover {
+   display: none;
+  }
+    
+  .mobil_text {
+    display: contents;
+    
+    
+   
+    
+  }
+
+  .link_mobil {
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    padding-inline: 50px;
+    background-color: var(--text-green);
+    color: var(--text-white)
+    
+    
+  }
+
+  .link_mobil:hover {
+    color: var(--header-footer-color);
+  }
+
+  .button_mobil {
+    background-color: var(--text-green);
+    box-shadow: none;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    display: grid:
+    
+    
+    
+  }
+  }
+
 
   </style>
 
 
-<!-- slet mig -->
