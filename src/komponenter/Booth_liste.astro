@@ -1,0 +1,15 @@
+---
+const {name, image, description, time, time_stop} = Astro.props;
+---
+
+<a href="link">
+    <article>
+        <img src={image} alt="billede">
+        <div>
+            <h2>{name}</h2>
+            <p>{description}</p>
+            <p>{time}</p>
+            <p>{time_stop}</p>
+        </div>
+    </article>
+</a>

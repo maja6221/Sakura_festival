@@ -1,0 +1,96 @@
+<header id="grid_menu">
+  <div class="logo">
+    <a href="index.astro"><img class="logo_img logo" src="logo.png" alt="logo" /></a>
+    <!-- <h2>Sakura</h2> -->
+  </div>
+
+  <nav id="header-nav">
+    <ul id="menu">
+      <li class="About us">
+        <a href="../pages/about.astro" class="subnavbtn">About us</a>
+      </li>
+      <li class="Program">
+        <a href="program.astro" class="subnavbtn">Program</a>
+      </li>
+      <li class="Booths">
+        <a href="booths.astro" class="subnavbtn">Booths</a>
+      </li>
+      <li class="Sponsors">
+        <a href="" class="subnavbtn">Sponsors</a>
+      </li>
+      <li class="Photos">
+        <a href="" class="subnavbtn">Photos</a>
+      </li>
+      <img class="icon" src="heart.png" alt="" />
+    </ul>
+  </nav>
+</header>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  ul#menu li {
+    display: inline;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 12px 28px 0 rgb(0 0 0 / 30%);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+    padding-left: 10px;
+    background-color: #d3726b;
+    z-index: 1;
+  }
+  header nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    gap: 35px;
+    overflow-x: auto;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #171717;
+    font-family: "quicksand";
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  a:hover {
+    color: #646464;
+  }
+
+  .logo {
+    width: 35%;
+  }
+
+  .icon {
+    width: 4%;
+  }
+
+  @media (min-width: 600px) {
+    #grid_menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+</style>

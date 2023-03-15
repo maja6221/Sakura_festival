@@ -1,4 +1,19 @@
 ---
+import { Debug } from "astro/components";
+import ProgramListe from "../komponenter/Program_liste.astro";
+
+const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
+
+// "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlldG1ydW5vdGpyZ3pnbWNjaHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MjE2MjksImV4cCI6MTk5NDI5NzYyOX0.3nyW3iCZSlvah2mVwALnccNLM39VwIq4g5xXUpR9L5g"
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlldG1ydW5vdGpyZ3pnbWNjaHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MjE2MjksImV4cCI6MTk5NDI5NzYyOX0.3nyW3iCZSlvah2mVwALnccNLM39VwIq4g5xXUpR9L5g",
+  },
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -7,9 +22,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <title>Forside</title>
   </head>
   <body>
-    <h1>Astro</h1>
+   
+    <h1>Forside</h1>
+    <main></main>
   </body>
 </html>
+
+<layout title="restauranter">
+  <!-- <Debug {data} /> -->
+  <main>
+    {data.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+  </main>
+</layout>
+
+<style></style>
