@@ -1,0 +1,97 @@
+---
+
+---
+
+<section class="grid_opacity">
+        
+    <div class="container">
+      <img src="billeder/image1.webp" alt="Avatar" class="image" style="width:100%">
+      <div class="middle">
+        <div class="text"><a class="txt1" href="kaffe.html">Kaffe</a></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="billeder/image9.webp" alt="Avatar" class="image" style="width:100%">
+      <div class="middle">
+        <div class="text"><a class="txt1" href="om_os.html">Om os</a></div>
+      </div>
+    </div>
+    <div id="cafe-container" class="container">
+      <img src="billeder/image2.webp" alt="Avatar" class="image" style="width:100%">
+      <div class="middle">
+        <div class="text"><a class="txt1" href="cafe.html">Café</a></div>
+      </div>
+    </div>
+    <div class="container">
+      <img src="billeder/image3.jpg" alt="Avatar" class="image" style="width:100%">
+      <div class="middle">
+        <div class="text"><a class="txt1" href="#footer_html">Kontakt</a></div>
+      </div>
+    </div>
+    
+  </section>
+
+
+  <style>
+    .container {
+  position: relative;
+  width: 100%;
+  padding-inline: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #9f8362;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  white-space: nowrap;
+  font-family: "Bebas Neue", cursive;
+}
+
+.grid_opacity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .grid_opacity {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+
+  }
+
+  
+}
+  </style>
