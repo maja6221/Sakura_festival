@@ -1,13 +1,13 @@
 <header id="grid_menu">
   <div class="logo">
-    <a href="index.astro"><img class="logo_img logo" src="logo.png" alt="logo" /></a>
+    <a href="index.astro"><img class="logo" src="billeder/logo.png" alt="logo" /></a>
     <!-- <h2>Sakura</h2> -->
   </div>
 
   <nav id="header-nav">
     <ul id="menu">
       <li class="About us">
-        <a href="../pages/about.astro" class="subnavbtn">About us</a>
+        <a href="about.astro" class="subnavbtn">About us</a>
       </li>
       <li class="Program">
         <a href="program.astro" class="subnavbtn">Program</a>
@@ -21,7 +21,7 @@
       <li class="Photos">
         <a href="" class="subnavbtn">Photos</a>
       </li>
-      <img class="icon" src="heart.png" alt="" />
+      <img class="icon" src="billeder/heart.png" alt="" />
     </ul>
   </nav>
 </header>
@@ -40,6 +40,10 @@
 
   ul#menu li {
     display: inline;
+  }
+
+  body {
+    background-color: rgba(248, 236, 236, 1);
   }
 
   header {
@@ -69,7 +73,7 @@
     text-decoration: none;
     font-weight: 700;
     color: #171717;
-    font-family: "quicksand";
+    font-family: "Quicksand";
     font-size: 18px;
     padding: 10px;
   }
@@ -86,11 +90,9 @@
     width: 4%;
   }
 
-  @media (min-width: 600px) {
-    #grid_menu {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-    }
+  #grid_menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 </style>

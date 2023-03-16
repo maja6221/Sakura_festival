@@ -9,6 +9,12 @@ import Navigation from "../komponenter/Navigation.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Noto+Sans+Javanese:wght@400;500&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
     <title>Program</title>
   </head>
   <body>
@@ -31,96 +37,24 @@ import Navigation from "../komponenter/Navigation.astro";
     </main>
 
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
-      ul#menu li {
-        display: inline;
-      }
-
-      body {
-        background-color: rgba(248, 236, 236, 1);
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        padding: 1rem 2rem;
-        box-shadow: 0 12px 28px 0 rgb(0 0 0 / 30%);
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding: 10px;
-        padding-left: 10px;
-        background-color: #d3726b;
-        z-index: 1;
-      }
-      header nav ul {
-        display: flex;
-        justify-content: space-between;
-        margin: 0;
-        padding: 0;
-        padding-bottom: 5px;
-        gap: 35px;
-        overflow-x: auto;
-      }
-
-      a {
-        text-decoration: none;
-        font-weight: 700;
-        color: #171717;
-        font-family: "Quicksand";
-        font-size: 18px;
-        padding: 10px;
-      }
-
-      a:hover {
-        color: #646464;
-      }
-
-      .logo {
-        width: 35%;
-      }
-
-      .icon {
-        width: 4%;
-      }
-
-      @media (min-width: 600px) {
-        #grid_menu {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          align-items: center;
-        }
-      }
-
       .overskrift1 {
         text-align: center;
-        font-family: "Quicksand,bold";
-        padding-top: 86px;
-        font-size: 48px;
+        font-family: "Quicksand";
+        padding-top: 65px;
+        font-size: 55px;
       }
 
       .tekst1 {
-        font-family: "Quicksand";
+        font-family: "Noto Sans Javanese";
         text-align: center;
-        padding-top: 30px;
-        font-size: 21px;
+        font-size: 22px;
+        line-height: 30px;
       }
 
       .bokse {
         display: grid;
         grid-template-columns: 1fr 1fr;
         text-align: center;
-        font-family: "Quicksand";
         padding-top: 90px;
         padding-left: 50px;
         color: rgba(161, 67, 67, 1);
@@ -130,17 +64,19 @@ import Navigation from "../komponenter/Navigation.astro";
       .boks1 {
         background-color: rgba(234, 225, 225, 1);
         width: 68%;
-        height: 240px;
+        height: 100%;
         padding: 5px;
         border-radius: 2px;
+        font-family: "Quicksand";
       }
 
       .boks2 {
         background-color: rgba(234, 225, 225, 1);
         width: 68%;
-        height: 240px;
+        height: 100%;
         padding: 5px;
         border-radius: 2px;
+        font-family: "Quicksand";
       }
 
       .button1 {
@@ -154,7 +90,7 @@ import Navigation from "../komponenter/Navigation.astro";
         color: #fff;
         cursor: pointer;
         display: inline-block;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 500;
         height: 50px;
         padding: 15px 31px;
@@ -173,7 +109,7 @@ import Navigation from "../komponenter/Navigation.astro";
         color: #fff;
         cursor: pointer;
         display: inline-block;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 500;
         height: 50px;
         padding: 15px 31px;
@@ -182,25 +118,123 @@ import Navigation from "../komponenter/Navigation.astro";
       }
 
       .overskrift1b1 {
-        padding-top: 40px;
+        padding-top: 20px;
         font-size: 26px;
       }
 
       .overskrift1b2 {
-        padding-top: 40px;
+        padding-top: 20px;
         font-size: 26px;
       }
 
       .overskrift2b1 {
-        padding-top: 8px;
-        padding-bottom: 35px;
+        padding-top: 2px;
+        padding-bottom: 15px;
         font-size: 26px;
       }
 
       .overskrift2b2 {
-        padding-top: 8px;
-        padding-bottom: 35px;
+        padding-top: 2px;
+        padding-bottom: 15px;
         font-size: 26px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* For tablets: */
+        .bokse {
+          display: grid;
+          grid-template-columns: 1fr;
+          font-family: "Quicksand";
+          padding-top: 90px;
+          color: rgba(161, 67, 67, 1);
+          margin-left: 50px;
+        }
+
+        .boks1 {
+          background-color: rgba(234, 225, 225, 1);
+          width: 75%;
+          height: 240px;
+          padding: 5px;
+          border-radius: 2px;
+        }
+
+        .boks2 {
+          background-color: rgba(234, 225, 225, 1);
+          width: 75%;
+          height: 240px;
+          padding: 5px;
+          border-radius: 2px;
+        }
+
+        .button1 {
+          color: white;
+          background-color: #156b4c;
+          font-family: "Quicksand";
+          appearance: none;
+          border-radius: 10px;
+          border-style: none;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 500;
+          height: 50px;
+          padding: 15px 31px;
+          position: relative;
+          text-align: center;
+        }
+
+        .button2 {
+          color: white;
+          background-color: #156b4c;
+          font-family: "Quicksand";
+          appearance: none;
+          border-radius: 10px;
+          border-style: none;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 500;
+          height: 50px;
+          padding: 15px 31px;
+          position: relative;
+          text-align: center;
+        }
+        .overskrift1b1 {
+          padding-top: 40px;
+          font-size: 20px;
+        }
+
+        .overskrift1b2 {
+          padding-top: 40px;
+          font-size: 20px;
+        }
+
+        .overskrift2b1 {
+          padding-top: 8px;
+          font-size: 20px;
+        }
+
+        .overskrift2b2 {
+          padding-top: 8px;
+          font-size: 20px;
+        }
+
+        .overskrift1 {
+          text-align: center;
+          font-family: "Quicksand";
+          padding-top: 50px;
+          font-size: 40px;
+        }
+
+        .tekst1 {
+          font-family: "Noto Sans Javanese";
+          text-align: center;
+          font-size: 15px;
+        }
       }
     </style>
   </body>
