@@ -1,0 +1,59 @@
+---
+import Kategori from "../komponenter/Kategori.astro";
+import Navigation from "../komponenter/Navigation.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <title>Booths</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div>
+        <a class="SS" href="index.astro"
+          ><img src="Billeder/storlogo.png" alt="logo" /></a
+        >
+        <h1>Sakura Festival</h1>
+        <h3>
+          Choose from our selection of restaurants, cafes, and shops, and
+          receive assistance with navigation.
+        </h3>
+        <Kategori />
+      </div>
+      <img src="Billeder/map.png" alt="" />
+    </main>
+  </body>
+</html>
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+ h3 {
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img{100%}
+  h1{margin-left: 12rem;}
+  .SS {
+ 
+    margin-left: 11.5rem;
+    padding: ;
+  }
+  a img {margin-top: 3rem;
+}
+  body{background-color: #F8ECEC;}
+</style>
