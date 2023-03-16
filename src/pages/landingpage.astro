@@ -1,23 +1,142 @@
 ---
+import "../styles/main.css";
 import Opacity from "../komponenter/Opacity.astro";
+import Carusel from "../komponenter/Carusel.astro";
+import Backdrop from "../komponenter/Backdrop.astro";
+import Timer from "../komponenter/Timer.astro";
+import Video from "../komponenter/Video.astro";
 ---
-
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="styles/main.css" />
     <title>Document</title>
-</head>
-<body style="background-color: var(--background-color);">
+  </head>
+  <body style="background-color: var(--background-color);">
     <main class="landingpage_main">
-        <Opacity></Opacity>
+      <Backdrop />
+      <Timer />
+      <hr class="hr1" />
+      <h2 class="h2_date">APRIL 22-23</h2>
+      <div class="date">
+        <p>The Copenhagen Sakura Festival will return to Langelinje Park under the blossoming cherry trees in 2023! The dates will be the 22nd and 23rd of April, 2023. We look forward to seeing you all again next year!</p>
+        <p>
+          The planning of the festival has already begun, and it will be more amazing than ever before. If you are interested in participating in the festival as a booth-holder, artist or any other connection, please do not hesitate to contact the festival committee by email:
+          info@ch.mofa.go.jp
+        </p>
+      </div>
+      <Opacity />
+      <hr class="hr1" />
+      <h2 class="h2_2022">Sakura Festival 2022</h2>
+      <!-- <Carusel /> -->
+
+      <h2 class="h2_post">Post Festival Video</h2>
+      <div class="post">
+        <p>Thank you everyone, for making Copenhagen Sakura Festival 2022 an amazing one! Please enjoy this video, highlighting the events at the festival this year. We hope to see you all next year!</p>
+      </div>
+
+      <Video></Video>
+     
     </main>
-</body>
+  </body>
 </html>
 
+<style>
+  .hr1 {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
 
+    border: 0;
+    border-top: 1px solid black;
+  }
+
+  .date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-inline: 10em;
+    gap: 2em;
+    line-height: 0.8cm;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-inline: 10em;
+    gap: 2em;
+    line-height: 0.8cm;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .h2_date {
+    margin-inline: 160px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+  }
+
+  .h2_2022 {
+    display: grid;
+    justify-content: center;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+  }
+
+  .h2_post {
+    margin-inline: 160px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+  }
+
+ 
+
+/* .videoer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+} */
+
+  @media (max-width: 600px) {
+    .date {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-inline: 3em;
+      gap: 2em;
+      line-height: 0.8cm;
+      font-family: "Quicksand", sans-serif;
+    }
+    .h2_date {
+      margin-inline: 50px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 25px;
+    }
+
+    .h2_2022 {
+      display: grid;
+      justify-content: center;
+      font-family: "Quicksand", sans-serif;
+      font-size: 30px;
+    }
+    .h2_post {
+      margin-inline: 50px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 25px;
+    }
+
+    .post {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-inline: 3em;
+      gap: 2em;
+      line-height: 0.8cm;
+      font-family: "Quicksand", sans-serif;
+    }
+ 
+
+  }
+</style>

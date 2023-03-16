@@ -1,0 +1,53 @@
+---
+
+var countDownDate = new Date("april 22, 2023 00:00:00").getTime();
+
+var myfunc = setInterval(function() {
+  // code goes here
+  }, 1000)
+
+  var now = new Date().getTime();
+var timeleft = countDownDate - now;
+  
+var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+
+// document.getElementById("days").innerHTML = days
+
+if (timeleft < 0) {
+  clearInterval(myfunc);
+  document.getElementById("days").innerHTML = ""
+  document.getElementById("end").innerHTML = "Times Up!";
+}
+---
+
+<section class="timer">
+    <h2 class="h2_timer">Days Until:</h2>
+  <p id="days"></p>
+  <h2 id="end"></h2>
+</section>
+
+
+<style>
+    .timer {
+    display: grid;
+    justify-content: center;
+  }
+
+  .h2_timer {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 70px;
+  }
+
+  #days {
+    justify-self: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 200px;
+  }
+</style>
+
+
+

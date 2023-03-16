@@ -1,0 +1,108 @@
+---
+---
+
+<section class="backdrop">
+  <div class="back">
+    <div class="back1">
+      <img class="img_backdrop" id="mobil_bag" src="Billeder/bag4.png" alt="" />
+      <h1 class="h1_index">Copenhagen <br /> Sakura Festival <br /> 2023</h1>
+    </div>
+  </div>
+
+  <div class="back0">
+    <div class="back2">
+      <img class="img_backdrop2" id="mobil_bag1" src="Billeder/mobil_bag.png" alt="" />
+      <h1 class="h1_index2">Copenhagen <br /> Sakura <br> Festival <br /> 2023</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+
+    
+  .img_backdrop {
+    width: 100%;
+  }
+
+  .img_backdrop2 {
+    display: none;
+  }
+
+  .back {
+    place-self: center;
+    padding-top: 0px;
+    width: 100%;
+  }
+
+  .back0 {
+    place-self: center;
+    padding-top: 0px;
+    width: 100%;
+  }
+  .back1 {
+    display: grid;
+    place-items: center;
+  }
+  .back2 {
+    display: grid;
+    place-items: center;
+  }
+
+  .img_backdrop,
+  .img_backdrop2 .h1_index,
+  .h1_index2 {
+    grid-area: 1 / 1;
+  }
+  .h1_index {
+    color: #41694c;
+    font-family: "Quicksand", sans-serif;
+    text-align: left;
+    font-size: 90px;
+    padding-right: 2%;
+    grid-area: 1 / 1;
+  }
+
+  .h1_index2 {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    #mobil_bag {
+      display: none;
+    }
+
+    .img_backdrop {
+      display: none;
+    }
+
+    .img_backdrop2 {
+      width: 100%;
+     
+    }
+
+    .back {
+      place-self: center;
+      padding-top: 0px;
+      width: 100%;
+    }
+    .back2 {
+      display: grid;
+      place-items: center;
+    }
+
+    .img_backdrop,
+    .img_backdrop2 .h1_index,
+    .h1_index2 {
+      grid-area: 1 / 1;
+    }
+
+    .h1_index {
+      color: #41694c;
+      font-family: "Quicksand", sans-serif;
+      text-align: left;
+      font-size: 80px;
+      padding-inline: 100%;
+      grid-area: 1 / 1;
+    }
+  }
+</style>
