@@ -1,66 +1,6 @@
 ---
-// /* konfigurer nedestående variabler efter behov */
-// //antallet af anmeldelser
-// const maxRatingsIndex = 8;
-// /* ^------------------------------------------^ */
-
-// //laver en array af elementer med klassen .testimonial-container
-// const ratings = document.querySelectorAll(".testimonial-container");
-
-// const carousel = document.getElementById("testimonial");
-
-// //bladre frem knap
-// const next = document.querySelector(".next");
-// next.addEventListener("click", () => {
-//   //hvis karrousellen IKKE har klassen .animating
-//   if (!carousel.classList.contains("animating")) {
-//     //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
-//     carousel.classList.add("animating");
-//     ratings.forEach((rating) => {
-//       //hvis data-index værdien er lig med eller mindre end 1
-//       if (rating.dataset.index <= 1) {
-//         //sæt data-index værdien til antallet af produkter
-//         rating.dataset.index = maxRatingsIndex;
-//       } else {
-//         //ellers træk 1 fra data-index værdien
-//         rating.dataset.index--;
-//       }
-//     });
-
-//     //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
-//     setTimeout(() => {
-//       carousel.classList.remove("animating");
-//     }, "750"); //750 millisekunder
-//   }
-// });
-
-// //bladre tilbage knap
-// const previous = document.querySelector(".previous");
-// previous.addEventListener("click", () => {
-//   //hvis karrousellen IKKE har klassen .animating
-//   if (!carousel.classList.contains("animating")) {
-//     //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
-//     carousel.classList.add("animating");
-//     ratings.forEach((rating) => {
-//       //hvis data-index værdien er lig med eller større end antallet af produkter
-//       if (rating.dataset.index >= maxRatingsIndex) {
-//         //sæt data-index værdien til 1
-//         rating.dataset.index = 1;
-//       } else {
-//         //ellers læg 1 til data-index værdien
-//         rating.dataset.index++;
-//       }
-//     });
-
-//     //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
-//     setTimeout(() => {
-//       carousel.classList.remove("animating");
-//     }, "750"); //750 millisekunder
-//   }
-// });
-
 ---
-
+<center>
 <section id="testimonial" class="max-width">
     <article class="testimonial-container" data-index="1">
       
@@ -98,15 +38,79 @@
     <button class="carousel-btn next">→</button>
   </section>
 
+</center>
 
+
+  <script>
+    /* konfigurer nedestående variabler efter behov */
+//antallet af anmeldelser
+const maxRatingsIndex = 8;
+/* ^------------------------------------------^ */
+
+//laver en array af elementer med klassen .testimonial-container
+const ratings = document.querySelectorAll(".testimonial-container");
+
+const carousel = document.getElementById("testimonial");
+
+//bladre frem knap
+const next = document.querySelector(".next");
+next.addEventListener("click", () => {
+  //hvis karrousellen IKKE har klassen .animating
+  if (!carousel.classList.contains("animating")) {
+    //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
+    carousel.classList.add("animating");
+    ratings.forEach((rating) => {
+      //hvis data-index værdien er lig med eller mindre end 1
+      if (rating.dataset.index <= 1) {
+        //sæt data-index værdien til antallet af produkter
+        rating.dataset.index = maxRatingsIndex;
+      } else {
+        //ellers træk 1 fra data-index værdien
+        rating.dataset.index--;
+      }
+    });
+
+    //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
+    setTimeout(() => {
+      carousel.classList.remove("animating");
+    }, "750"); //750 millisekunder
+  }
+});
+
+//bladre tilbage knap
+const previous = document.querySelector(".previous");
+previous.addEventListener("click", () => {
+  //hvis karrousellen IKKE har klassen .animating
+  if (!carousel.classList.contains("animating")) {
+    //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
+    carousel.classList.add("animating");
+    ratings.forEach((rating) => {
+      //hvis data-index værdien er lig med eller større end antallet af produkter
+      if (rating.dataset.index >= maxRatingsIndex) {
+        //sæt data-index værdien til 1
+        rating.dataset.index = 1;
+      } else {
+        //ellers læg 1 til data-index værdien
+        rating.dataset.index++;
+      }
+    });
+
+    //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
+    setTimeout(() => {
+      carousel.classList.remove("animating");
+    }, "750"); //750 millisekunder
+  }
+});
+  </script>
 
   <style>
 
   #testimonial {
     position: relative;
     padding-inline: 24px;
-    margin-block: 80px 40px;
-    height: 17.5rem;
+    margin-block: 80px 150px;
+    height: 18.5rem;
+    width: 80%;
   }
   
   .testimonial-container {

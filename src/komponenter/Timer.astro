@@ -1,5 +1,16 @@
 ---
 
+
+---
+
+<section class="timer">
+    <h2 class="h2_timer">Days Until:</h2>
+  <p id="days"></p>
+  <h2 id="end"></h2>
+</section>
+
+
+<script>
 var countDownDate = new Date("april 22, 2023 00:00:00").getTime();
 
 var myfunc = setInterval(function() {
@@ -15,21 +26,14 @@ var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
 
-// document.getElementById("days").innerHTML = days
+document.getElementById("days").innerHTML = days
 
 if (timeleft < 0) {
   clearInterval(myfunc);
   document.getElementById("days").innerHTML = ""
   document.getElementById("end").innerHTML = "Times Up!";
 }
----
-
-<section class="timer">
-    <h2 class="h2_timer">Days Until:</h2>
-  <p id="days"></p>
-  <h2 id="end"></h2>
-</section>
-
+</script>
 
 <style>
     .timer {
@@ -48,6 +52,8 @@ if (timeleft < 0) {
     font-size: 200px;
   }
 </style>
+
+
 
 
 

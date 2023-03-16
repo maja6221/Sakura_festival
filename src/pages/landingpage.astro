@@ -5,6 +5,7 @@ import Carusel from "../komponenter/Carusel.astro";
 import Backdrop from "../komponenter/Backdrop.astro";
 import Timer from "../komponenter/Timer.astro";
 import Video from "../komponenter/Video.astro";
+import Navigation from "../komponenter/Navigation.astro";
 ---
 
 <!DOCTYPE html>
@@ -19,7 +20,11 @@ import Video from "../komponenter/Video.astro";
     <title>Document</title>
   </head>
   <body style="background-color: var(--background-color);">
+    <header>
+        <Navigation></Navigation>
+    </header>
     <main class="landingpage_main">
+
       <Backdrop />
       <Timer />
       <hr class="hr1" />
@@ -34,7 +39,7 @@ import Video from "../komponenter/Video.astro";
       <Opacity />
       <hr class="hr1" />
       <h2 class="h2_2022">Sakura Festival 2022</h2>
-      <!-- <Carusel /> -->
+      <Carusel />
 
       <h2 class="h2_post">Post Festival Video</h2>
       <div class="post">
