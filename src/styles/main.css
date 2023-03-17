@@ -1,17 +1,26 @@
-
 :root {
-    /* Farver */
-    --background-color: #F8ECEC;
-    --text-green: #156B4C;
-    --header-footer-color: #D3726B;
-    --box-index-color: #FFDDDD;
-    --text-pink: #A14343;  
-    --text-white: #fff;
-    --text-black: #000;
-
-  
+  /* Farver */
+  --background-color: #f8ecec;
+  --text-green: #156b4c;
+  --header-footer-color: #d3726b;
+  --box-index-color: #ffdddd;
+  --text-pink: #a14343;
+  --text-white: #fff;
+  --text-black: #000;
 }
 
 .body_landingpage {
-color: var(--background-color);
+  color: var(--background-color);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* så alle billeder fylder det hele, dvs. har en størrelse/width på 100% */
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
