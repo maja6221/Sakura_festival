@@ -1,18 +1,17 @@
 ---
-const { name, image, description, time, time_stop } = Astro.props;
+const { name, time, time_stop } = Astro.props;
 import "../styles/main.css";
 ---
 
 <a href="link">
   <article>
-    <!-- <img src={image} alt="billede"> -->
     <div class="grid_link">
       <h2>{name}</h2>
+      <div class="time">
+        <p>{time}</p>
+        <span> - </span>
+        <p>{time_stop}</p>
       </div>
-      <!-- <p>{description}</p> -->
-      <div>
-      <p>{time}</p>
-      <p>{time_stop}</p>
     </div>
   </article>
 </a>
@@ -24,10 +23,38 @@ import "../styles/main.css";
 
   p {
     color: black;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
   }
 
-  .grid_link {
-    display: grid;
+  h2 {
+    color: black;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    
+  
+    
+  }
+
+  div {
+    display: flex;
     grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 30px;
+    
+    
+  }
+
+  .time {
+    justify-self: end;
+    
+    
+  }
+
+  span {
+    color: black;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
   }
 </style>
