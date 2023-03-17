@@ -5,7 +5,7 @@
 
 <section class="timer">
     <h2 class="h2_timer">Days Until:</h2>
-  <p id="days"></p>
+  <span id="days"></span>
   <h2 id="end"></h2>
 </section>
 
@@ -47,9 +47,12 @@ if (timeleft < 0) {
   }
 
   #days {
+    /* display: inline-block; */
     justify-self: center;
     font-family: 'Quicksand', sans-serif;
     font-size: 200px;
+    
+  
   }
 </style>
 

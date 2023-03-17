@@ -110,10 +110,11 @@ previous.addEventListener("click", () => {
     padding-inline: 24px;
     margin-block: 80px 150px;
     height: 18.5rem;
-    width: 80%;
+    width: 75%;
   }
   
   .testimonial-container {
+    /* position absolute fungerer ikke */
       position: absolute;
       top: 10%;
       text-align: center;
@@ -170,7 +171,7 @@ previous.addEventListener("click", () => {
     /* viser 1 i stedet for 3 på mobil */
     @media (max-width: 678px) {
       .testimonial-container {
-        width: 80%;
+        width: 90%;
       }
   
       [data-index="1"], [data-index="2"] {
@@ -191,13 +192,13 @@ previous.addEventListener("click", () => {
   
     .carousel-btn {
       position: absolute;
-      padding: 16px 8px;
+      padding: 16px 10px;
       border: 0;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: #D3726B;
       opacity: 0;
       transition: background-color 0.3s, opacity 0.15s, transform 0.3s ease-in-out;
-      z-index: 10;
-      top: 30%;
+      z-index: 8;
+      top: 50%;
       transform: translateY(-50%);
     }
   
@@ -214,16 +215,16 @@ previous.addEventListener("click", () => {
     }
   
     .carousel-btn:hover {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: #FFDDDD;
     }
   
     .previous {
-      left: 8px;
+      left: -30px;
       transform: translateX(-6px);
     }
   
     .next {
-      right: 8px;
+      right: -30px;
       transform: translateX(6px);
     }
   
