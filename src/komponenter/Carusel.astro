@@ -1,110 +1,102 @@
 ---
 ---
-<center>
-<section id="testimonial" class="max-width">
-    <article class="testimonial-container" data-index="1">
-      
-      <img src="billeder/image1.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="2">
-     
-        <img src="billeder/image2.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="3">
-    
-        <img src="billeder/image3.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="4">
-      
-        <img src="billeder/image4.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="5">
-      
-        <img src="billeder/image5.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="6">
-      
-        <img src="billeder/image6.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="7">
-      
-        <img src="billeder/image7.jpeg" alt="">
-    </article>
-    <article class="testimonial-container" data-index="8">
-      
-        <img src="billeder/image8.jpeg" alt="">
-    </article>
-    <button class="carousel-btn previous">←</button>
-    <button class="carousel-btn next">→</button>
-  </section>
 
+<center>
+  <div class="car_container">
+    <section id="testimonial" class="max-width">
+      <article class="testimonial-container" data-index="1">
+        <img src="billeder/image1.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="2">
+        <img src="billeder/image2.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="3">
+        <img src="billeder/image3.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="4">
+        <img src="billeder/image4.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="5">
+        <img src="billeder/image5.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="6">
+        <img src="billeder/image6.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="7">
+        <img src="billeder/image7.jpeg" alt="" />
+      </article>
+      <article class="testimonial-container" data-index="8">
+        <img src="billeder/image8.jpeg" alt="" />
+      </article>
+      <button class="carousel-btn previous">←</button>
+      <button class="carousel-btn next">→</button>
+    </section>
+  </div>
 </center>
 
+<script>
+  /* konfigurer nedestående variabler efter behov */
+  //antallet af anmeldelser
+  const maxRatingsIndex = 8;
+  /* ^------------------------------------------^ */
 
-  <script>
-    /* konfigurer nedestående variabler efter behov */
-//antallet af anmeldelser
-const maxRatingsIndex = 8;
-/* ^------------------------------------------^ */
+  //laver en array af elementer med klassen .testimonial-container
+  const ratings = document.querySelectorAll(".testimonial-container");
 
-//laver en array af elementer med klassen .testimonial-container
-const ratings = document.querySelectorAll(".testimonial-container");
+  const carousel = document.getElementById("testimonial");
 
-const carousel = document.getElementById("testimonial");
+  //bladre frem knap
+  const next = document.querySelector(".next");
+  next.addEventListener("click", () => {
+    //hvis karrousellen IKKE har klassen .animating
+    if (!carousel.classList.contains("animating")) {
+      //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
+      carousel.classList.add("animating");
+      ratings.forEach((rating) => {
+        //hvis data-index værdien er lig med eller mindre end 1
+        if (rating.dataset.index <= 1) {
+          //sæt data-index værdien til antallet af produkter
+          rating.dataset.index = maxRatingsIndex;
+        } else {
+          //ellers træk 1 fra data-index værdien
+          rating.dataset.index--;
+        }
+      });
 
-//bladre frem knap
-const next = document.querySelector(".next");
-next.addEventListener("click", () => {
-  //hvis karrousellen IKKE har klassen .animating
-  if (!carousel.classList.contains("animating")) {
-    //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
-    carousel.classList.add("animating");
-    ratings.forEach((rating) => {
-      //hvis data-index værdien er lig med eller mindre end 1
-      if (rating.dataset.index <= 1) {
-        //sæt data-index værdien til antallet af produkter
-        rating.dataset.index = maxRatingsIndex;
-      } else {
-        //ellers træk 1 fra data-index værdien
-        rating.dataset.index--;
-      }
-    });
+      //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
+      setTimeout(() => {
+        carousel.classList.remove("animating");
+      }, "750"); //750 millisekunder
+    }
+  });
 
-    //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
-    setTimeout(() => {
-      carousel.classList.remove("animating");
-    }, "750"); //750 millisekunder
-  }
-});
+  //bladre tilbage knap
+  const previous = document.querySelector(".previous");
+  previous.addEventListener("click", () => {
+    //hvis karrousellen IKKE har klassen .animating
+    if (!carousel.classList.contains("animating")) {
+      //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
+      carousel.classList.add("animating");
+      ratings.forEach((rating) => {
+        //hvis data-index værdien er lig med eller større end antallet af produkter
+        if (rating.dataset.index >= maxRatingsIndex) {
+          //sæt data-index værdien til 1
+          rating.dataset.index = 1;
+        } else {
+          //ellers læg 1 til data-index værdien
+          rating.dataset.index++;
+        }
+      });
 
-//bladre tilbage knap
-const previous = document.querySelector(".previous");
-previous.addEventListener("click", () => {
-  //hvis karrousellen IKKE har klassen .animating
-  if (!carousel.classList.contains("animating")) {
-    //tilføj klassen .animating og sætter knapperne på pause indtil animationen er færdig
-    carousel.classList.add("animating");
-    ratings.forEach((rating) => {
-      //hvis data-index værdien er lig med eller større end antallet af produkter
-      if (rating.dataset.index >= maxRatingsIndex) {
-        //sæt data-index værdien til 1
-        rating.dataset.index = 1;
-      } else {
-        //ellers læg 1 til data-index værdien
-        rating.dataset.index++;
-      }
-    });
+      //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
+      setTimeout(() => {
+        carousel.classList.remove("animating");
+      }, 750); //750 millisekunder
+    }
+  });
+</script>
 
-    //fjerner klassen .animating når animationen er færdig efter 750ms og gør knapperne klikbart igen
-    setTimeout(() => {
-      carousel.classList.remove("animating");
-    }, 750); //750 millisekunder
-  }
-});
-  </script>
-
-  <style>
-
+<style>
   #testimonial {
     position: relative;
     padding-inline: 24px;
@@ -112,126 +104,127 @@ previous.addEventListener("click", () => {
     height: 18.5rem;
     width: 75%;
   }
-  
+
+  .car_container {
+    overflow: hidden;
+  }
+
   .testimonial-container {
     /* position absolute fungerer ikke */
-      position: absolute;
-      top: 10%;
-      text-align: center;
-      width: clamp(100px, 25vw, 320px);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transform: translateX(-50%);
-      transition: left 0.75s ease-out, opacity 0.375s ease-in-out;
-    } 
-  
-   
-  
-    [data-index="1"] {
-      left: -20%;
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    width: clamp(100px, 25vw, 320px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transform: translateX(-50%);
+    transition: left 0.75s ease-out, opacity 0.375s ease-in-out;
+  }
+
+  [data-index="1"] {
+    left: -20%;
+    opacity: 0;
+  }
+
+  [data-index="2"] {
+    left: 15%;
+    opacity: 1;
+  }
+
+  [data-index="3"] {
+    left: 50%;
+    opacity: 1;
+  }
+
+  [data-index="4"] {
+    left: 85%;
+    opacity: 1;
+  }
+
+  [data-index="5"] {
+    left: 120%;
+    opacity: 0;
+  }
+
+  [data-index="6"] {
+    left: 145%;
+    opacity: 0;
+  }
+
+  [data-index="7"] {
+    left: 170%;
+    opacity: 0;
+  }
+
+  [data-index="8"] {
+    left: 195%;
+    opacity: 0;
+  }
+
+  /* viser 1 i stedet for 3 på mobil */
+  @media (max-width: 678px) {
+    .testimonial-container {
+      width: 90%;
+    }
+
+    [data-index="1"],
+    [data-index="2"] {
+      left: -50%;
       opacity: 0;
     }
-  
-    [data-index="2"] {
-      left: 15%;
-      opacity: 1;
-    }
-  
+
     [data-index="3"] {
       left: 50%;
       opacity: 1;
     }
-  
-    [data-index="4"] {
-      left: 85%;
-      opacity: 1;
-    }
-  
+
+    [data-index="4"],
     [data-index="5"] {
-      left: 120%;
+      left: 150%;
       opacity: 0;
     }
+  }
 
-    [data-index="6"] {
-        left: 145%;
-        opacity: 0;
-      }
+  .carousel-btn {
+    position: absolute;
+    padding: 16px 10px;
+    border: 0;
+    background-color: #d3726b;
+    opacity: 0;
+    transition: background-color 0.3s, opacity 0.15s, transform 0.3s ease-in-out;
+    z-index: 8;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-      [data-index="7"] {
-        left: 170%;
-        opacity: 0;
-      }
-
-      [data-index="8"] {
-        left: 195%;
-        opacity: 0;
-      }
-  
-    /* viser 1 i stedet for 3 på mobil */
-    @media (max-width: 678px) {
-      .testimonial-container {
-        width: 90%;
-      }
-  
-      [data-index="1"], [data-index="2"] {
-        left: -50%;
-        opacity: 0;
-      }
-  
-      [data-index="3"] {
-        left: 50%;
-        opacity: 1;
-      }
-  
-      [data-index="4"], [data-index="5"] {
-        left: 150%;
-        opacity: 0;
-      }
-    }
-  
+  /* knapperne er altid synlige på mobil */
+  @media (hover: none) {
     .carousel-btn {
-      position: absolute;
-      padding: 16px 10px;
-      border: 0;
-      background-color: #D3726B;
-      opacity: 0;
-      transition: background-color 0.3s, opacity 0.15s, transform 0.3s ease-in-out;
-      z-index: 8;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  
-    /* knapperne er altid synlige på mobil */
-    @media (hover: none) {
-      .carousel-btn {
-        opacity: 1;
-      }
-    }
-  
-    #testimonial:hover .carousel-btn {
       opacity: 1;
-      transform: translateX(0);
     }
-  
-    .carousel-btn:hover {
-      background-color: #FFDDDD;
-    }
-  
-    .previous {
-      left: -30px;
-      transform: translateX(-6px);
-    }
-  
-    .next {
-      right: -30px;
-      transform: translateX(6px);
-    }
-  
-    .testimonial-container > * {
-      margin: 0;
-    }
-  </style>
+  }
 
+  #testimonial:hover .carousel-btn {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
+  .carousel-btn:hover {
+    background-color: #ffdddd;
+  }
 
+  .previous {
+    left: -30px;
+    transform: translateX(-6px);
+  }
+
+  .next {
+    right: -30px;
+    transform: translateX(6px);
+  }
+
+  .testimonial-container > * {
+    margin: 0;
+  }
+</style>
