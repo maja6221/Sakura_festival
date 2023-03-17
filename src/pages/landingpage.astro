@@ -6,6 +6,7 @@ import Backdrop from "../komponenter/Backdrop.astro";
 import Timer from "../komponenter/Timer.astro";
 import Video from "../komponenter/Video.astro";
 import Navigation from "../komponenter/Navigation.astro";
+import Footer from "../komponenter/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -21,10 +22,9 @@ import Navigation from "../komponenter/Navigation.astro";
   </head>
   <body style="background-color: var(--background-color);">
     <header>
-        <Navigation></Navigation>
+      <Navigation />
     </header>
     <main class="landingpage_main">
-
       <Backdrop />
       <Timer />
       <hr class="hr1" />
@@ -32,8 +32,8 @@ import Navigation from "../komponenter/Navigation.astro";
       <div class="date">
         <p>The Copenhagen Sakura Festival will return to Langelinje Park under the blossoming cherry trees in 2023! The dates will be the 22nd and 23rd of April, 2023. We look forward to seeing you all again next year!</p>
         <p>
-          The planning of the festival has already begun, and it will be more amazing than ever before. If you are interested in participating in the festival as a booth-holder, artist or any other connection, please do not hesitate to contact the festival committee by email:
-          info@ch.mofa.go.jp
+          The planning of the festival has already begun, and it will be more amazing than ever before. If you are interested in participating in the festival as a booth-holder, artist or any other connection, please do not hesitate to contact the
+          festival committee by email: info@ch.mofa.go.jp
         </p>
       </div>
       <Opacity />
@@ -46,9 +46,9 @@ import Navigation from "../komponenter/Navigation.astro";
         <p>Thank you everyone, for making Copenhagen Sakura Festival 2022 an amazing one! Please enjoy this video, highlighting the events at the festival this year. We hope to see you all next year!</p>
       </div>
 
-      <Video></Video>
-     
+      <Video />
     </main>
+    <Footer />
   </body>
 </html>
 
@@ -99,9 +99,7 @@ import Navigation from "../komponenter/Navigation.astro";
     font-size: 30px;
   }
 
- 
-
-/* .videoer {
+  /* .videoer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 } */
@@ -141,7 +139,5 @@ import Navigation from "../komponenter/Navigation.astro";
       line-height: 0.8cm;
       font-family: "Quicksand", sans-serif;
     }
- 
-
   }
 </style>

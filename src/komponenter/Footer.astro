@@ -1,0 +1,115 @@
+<body>
+  <main></main>
+  <div class="footer">
+    <div>
+      <h1 class="h1_footer">Contact</h1>
+      <p class="p_footer">c/o Ebassy of Japan Havneholmen 25, 9F. 1561 København V</p>
+      <p class="p_footer">tlf: (+45) 3345 5121</p>
+      <p class="p_footer">fax: (+45) 3311 3377</p>
+      <p class="p_footer">email: info.cph@ch.mofa.go.jp</p>
+    </div>
+
+    <div>
+      <h1 class="h1_footer">Social media</h1>
+      <div class="footer_icons">
+        <!-- <img class="mail" src="Artboard 4.svg" alt="" /> -->
+        <!-- <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a> -->
+        <!-- <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-facebook"></a> -->
+        <a href="https://www.facebook.com/copenhagensakurafestival"> <img class="facebook" src="billeder/facebook_icon.svg" alt="" /></a>
+        <a href="https://www.instagram.com/copenhagensakurafestival/"> <img class="instagram" src="billeder/instagram_icon.svg" alt="" /></a>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="footer_map">Map</h1>
+      <iframe
+        class="google_map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.892773482541!2d12.597081015801392!3d55.690851954235974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252df6722ab2d%3A0xa3995aee90fb6778!2sLangelinie%20Park%2C%20Nordre%20Toldbod%2C%201259%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1678962385936!5m2!1sda!2sdk"
+        width="300"
+        height="150"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="adresse">Langelinie Park, Nordre Toldbod, 1259 København K</p>
+    </div>
+  </div>
+</body>
+
+<style>
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: rgba(211, 114, 107, 1);
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .h1_footer {
+    color: #f0e9e9;
+    font-size: 20px;
+    margin-top: 4%;
+    padding-left: 90px;
+    padding-right: 90px;
+    grid-area: 1/1;
+    margin-bottom: 12px;
+    font-family: "Quicksand";
+  }
+
+  .p_footer {
+    font-size: 15px;
+    color: #f0e9e9;
+    padding: 5px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 8px;
+    font-family: "Quicksand";
+  }
+
+  .footer_icons {
+    padding-top: 3px;
+    padding-left: 52px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    /* grid-template-columns: 1fr 1fr; */
+  }
+
+  .google_map {
+    padding-left: 10px;
+  }
+
+  .adresse {
+    font-size: 15px;
+    color: #f0e9e9;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 90px;
+    padding-bottom: 8px;
+    font-family: "Quicksand";
+  }
+
+  .facebook {
+    width: 50%;
+    margin-left: 32px;
+    /* margin-bottom: 98px; */
+  }
+  .instagram {
+    width: 47%;
+    padding-top: 12px;
+    margin-right: 20px;
+  }
+
+  .footer_map {
+    padding-left: 2.5%;
+    color: #f0e9e9;
+    font-size: 20px;
+    margin-top: 4%;
+    grid-area: 1/1;
+    margin-bottom: 12px;
+    font-family: "Quicksand";
+  }
+</style>

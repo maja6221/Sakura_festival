@@ -2,6 +2,7 @@
 import Kategori from "../komponenter/Kategori.astro";
 import Navigation from "../komponenter/Navigation.astro";
 import "../styles/main.css";
+import Footer from "../komponenter/Footer.astro";
 ---
 
 <html lang="en">
@@ -27,42 +28,44 @@ import "../styles/main.css";
       </div>
       <img class="map" src="Billeder/map.png" alt="" />
     </main>
+    <Footer />
   </body>
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+    }
+    h3 {
+      max-width: 22rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .map {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+    h1 {
+      text-align: center;
+    }
+
+    a img {
+      margin-top: 2rem;
+      max-width: 17rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      height: 32%;
+      padding-bottom: 40px;
+    }
+
+    body {
+      background-color: #f8ecec;
+      height: 100vh;
+    }
+    .side1 {
+      width: 100%;
+    }
+  </style>
 </html>
-<style>
-  main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 5rem;
-  }
-  h3 {
-    max-width: 22rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .map {
-    width: 100%;
-  }
-  h1 {
-    text-align: center;
-  }
-
-  a img {
-    margin-top: 2rem;
-    max-width: 17rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 32%;
-    padding-bottom: 40px;
-  }
-
-  body {
-    background-color: #f8ecec;
-    height: 100vh;
-  }
-  .side1 {
-    width: 100%;
-  }
-</style>
