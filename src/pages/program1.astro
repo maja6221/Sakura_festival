@@ -1,5 +1,6 @@
 ---
 import { Debug } from "astro/components";
+import "../styles/main.css";
 import ProgramListe from "../komponenter/Program_liste.astro";
 import Navigation from "../komponenter/Navigation.astro";
 
@@ -27,31 +28,80 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
     <title>Forside</title>
   </head>
   <body>
     <Navigation />
-    <h1>Forside</h1>
-    <main>
-      <section>
-        <h2>Main Stage</h2>
-        {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
-      </section>
-      <section>
-        <h2>Second Stage</h2>
-        {SecondStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
-      </section>
-      <section>
-        <h2>On the Lawn</h2>
-        {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
-      </section>
-    </main>
+    <h1 class="h1_dato">Saturday 22.04.2023</h1>
+    <h2 class="h2_dato">The program for this day</h2>
+    <center>
+      <main>
+        <section>
+          <h2 class="venue">Main Stage</h2>
+          <hr class="hr1" />
+          {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+        </section>
+        <section>
+          <h2 class="venue">Second Stage</h2>
+          <hr class="hr1" />
+          {SecondStage.map((restaurant) => 
+          <ProgramListe 
+          link={`/komponenter/${restaurant.id}`} 
+          image={`/thumbs/${restaurant.image}`} 
+          name={restaurant.name} description={restaurant.description} 
+          time={restaurant.time} 
+          time_stop={restaurant.time_stop} />)}
+        </section>
+        <section>
+          <h2 class="venue">On the Lawn</h2>
+          <hr class="hr1" />
+          {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+        </section>
+      </main>
+    </center>
   </body>
 
   <style>
     main {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      text-align: justify;
+      padding-left: 16%;
     }
+    .hr1 {
+      margin-left: -1%;
+      margin-right: 64%;
+      margin-bottom: 10%;
+      margin-top: 2%;
+
+      border: 0;
+      border-top: 1px solid var(--text-pink);
+      
+    }
+
+    .h1_dato {
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        color: #156b4c;
+        font-size: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }
+
+    .h2_dato {
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        padding-bottom: 50px;
+    }
+
+    .venue {
+        color: var(--text-pink);
+    }
+   
+
+    
   </style>
 </html>

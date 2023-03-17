@@ -1,19 +1,33 @@
 ---
-const {name, image, description, time, time_stop} = Astro.props;
+const { name, image, description, time, time_stop } = Astro.props;
+import "../styles/main.css";
 ---
 
 <a href="link">
-    <article>
-        <!-- <img src={image} alt="billede"> -->
-        <div>
-            <h2>{name}</h2>
-            <!-- <p>{description}</p> -->
-            <p>{time}</p>
-            <p>{time_stop}</p>
-        </div>
-    </article>
+  <article>
+    <!-- <img src={image} alt="billede"> -->
+    <div class="grid_link">
+      <h2>{name}</h2>
+      </div>
+      <!-- <p>{description}</p> -->
+      <div>
+      <p>{time}</p>
+      <p>{time_stop}</p>
+    </div>
+  </article>
 </a>
 
 <style>
-    
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    color: black;
+  }
+
+  .grid_link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 </style>
