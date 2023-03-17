@@ -16,7 +16,9 @@ const options = {
 const response = await fetch(url, options);
 const data = await response.json();
 
-const venue = data.filter((venue) => venue.venue === MainStage);
+const MainStage = data.filter((event) => event.venue === "MainStage");
+const SecondStage = data.filter((event) => event.venue === "SecondStage");
+const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
 ---
 
 <html lang="en">
@@ -25,28 +27,31 @@ const venue = data.filter((venue) => venue.venue === MainStage);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
     <title>Forside</title>
   </head>
   <body>
-    <Navigation>
-      <h1>Forside</h1>
-      <main>
-
-        <section>
-            
-        </section>
-
-      </main>
-    </Navigation>
+    <Navigation />
+    <h1>Forside</h1>
+    <main>
+      <section>
+        <h2>Main Stage</h2>
+        {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+      </section>
+      <section>
+        <h2>Second Stage</h2>
+        {SecondStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+      </section>
+      <section>
+        <h2>On the Lawn</h2>
+        {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+      </section>
+    </main>
   </body>
 
-  <layout title="restauranter">
-    <!-- <Debug {data} /> -->
-    <main>
-      {data.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
-    </main>
-  </layout>
-
-  <style></style>
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  </style>
 </html>
