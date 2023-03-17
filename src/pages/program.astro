@@ -1,5 +1,6 @@
 ---
 import Navigation from "../komponenter/Navigation.astro";
+import "../styles/main.css";
 ---
 
 <html lang="en">
@@ -21,7 +22,9 @@ import Navigation from "../komponenter/Navigation.astro";
     <Navigation />
     <main>
       <h1 class="overskrift1">Program of the festival</h1>
-      <p class="tekst1">We are proud to present the official program for the <br /> 2023 edition of Copenhagen Sakura Festival!</p>
+      <center>
+        <p class="tekst1">We are proud to present the official program for the <br /> 2023 edition of Copenhagen Sakura Festival!</p>
+      </center>
       <div class="bokse">
         <div class="boks1">
           <h2 class="overskrift1b1">Saturday</h2>
@@ -46,9 +49,11 @@ import Navigation from "../komponenter/Navigation.astro";
 
       .tekst1 {
         font-family: "Noto Sans Javanese";
-        text-align: center left;
+        text-align: justify;
         font-size: 22px;
         line-height: 30px;
+        margin-left: 90px;
+        padding-right: 90px;
       }
 
       .bokse {
@@ -63,8 +68,8 @@ import Navigation from "../komponenter/Navigation.astro";
 
       .boks1 {
         background-color: rgba(234, 225, 225, 1);
-        width: 68%;
-        height: 100%;
+        width: 78%;
+        height: 140%;
         padding: 5px;
         border-radius: 2px;
         font-family: "Quicksand";
@@ -72,8 +77,8 @@ import Navigation from "../komponenter/Navigation.astro";
 
       .boks2 {
         background-color: rgba(234, 225, 225, 1);
-        width: 68%;
-        height: 100%;
+        width: 78%;
+        height: 140%;
         padding: 5px;
         border-radius: 2px;
         font-family: "Quicksand";
