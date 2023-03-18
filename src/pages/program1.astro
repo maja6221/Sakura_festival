@@ -3,6 +3,7 @@ import { Debug } from "astro/components";
 import "../styles/main.css";
 import ProgramListe from "../komponenter/Program_liste.astro";
 import Navigation from "../komponenter/Navigation.astro";
+import Footer from "../komponenter/Footer.astro";
 
 const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
 
@@ -41,7 +42,11 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">Main Stage</h2>
           <hr class="hr1" />
-          {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {
+            MainStage.map((restaurant) => (
+              <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />
+            ))
+          }
         </section>
         <section>
           <h2 class="venue">Second Stage</h2>
@@ -51,57 +56,61 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">On the Lawn</h2>
           <hr class="hr1" />
-          {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {
+            On_the_lawn.map((restaurant) => (
+              <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />
+            ))
+          }
         </section>
       </main>
     </center>
   </body>
+  <Footer>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: justify;
+        padding-left: 3%;
+        background-color: #eae1e1;
+        width: 80%;
+        padding-top: 30px;
+        padding-bottom: 60px;
+      }
+      .hr1 {
+        margin-left: 8%;
+        margin-right: 25%;
+        margin-bottom: 10%;
+        margin-top: 2%;
 
-  <style>
-    main {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: justify;
-      padding-left: 3%;
-      background-color: #eae1e1;
-      width: 80%;
-      padding-top: 30px;
-      padding-bottom: 60px;
-    }
-    .hr1 {
-      margin-left: 8%;
-      margin-right: 25%;
-      margin-bottom: 10%;
-      margin-top: 2%;
+        border: 0;
+        border-top: 1px solid var(--text-pink);
+      }
 
-      border: 0;
-      border-top: 1px solid var(--text-pink);
-    }
+      .h1_dato {
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        color: #156b4c;
+        font-size: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
 
-    .h1_dato {
-      text-align: center;
-      font-family: "Quicksand", sans-serif;
-      color: #156b4c;
-      font-size: 50px;
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
+      .h2_dato {
+        text-align: center;
+        font-family: "Quicksand", sans-serif;
+        padding-bottom: 50px;
+      }
 
-    .h2_dato {
-      text-align: center;
-      font-family: "Quicksand", sans-serif;
-      padding-bottom: 50px;
-    }
+      .venue {
+        color: var(--text-pink);
+        font-size: 25px;
+        text-align: center;
+        padding-right: 60px;
+      }
 
-    .venue {
-      color: var(--text-pink);
-      font-size: 25px;
-      text-align: center;
-      padding-right: 60px;
-    }
-
-    .main_program1 {
-     
-    }
-  </style>
+      .main_program1 {
+      }
+    </style>
+  </Footer>
 </html>
