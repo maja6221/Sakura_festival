@@ -1,20 +1,55 @@
 ---
-const { name, time, time_stop } = Astro.props;
+const { name, image, description, venue, time, time_stop } = Astro.props;
 import "../styles/main.css";
 ---
 
 <a href="link">
   <article>
-    <div class="grid_link">
-      <h2>{name}</h2>
-      <div class="time">
-        <p>{time}</p>
-        <span> - </span>
-        <p>{time_stop}</p>
+    <div class="flex_link">
+      <div class="flex1">
+        <div class="box">
+          <a class="button" href="#popup1"> <h2>{name}</h2></a>
+        </div>
+
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <h3 class="h3_pop">{name}</h3>
+            <img src={image} alt="">
+            <p class="p_pop">{description}</p>
+            <p class="p_pop">{venue}</p>
+            <div class="time">
+              <p class="time_pop">{time}</p>
+              <span> -</span>
+              <p class="time_pop">{time_stop}</p>
+            </div>
+
+            <a class="close" href="#">&times;</a>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="time1">
+        <div class="time">
+          <p>{time}</p>
+          <span> -</span>
+          <p>{time_stop}</p>
+        </div>
       </div>
     </div>
   </article>
 </a>
+
+<script>
+  // let galleri = document.querySelector(".galleri");
+  // let change = true;
+
+  // document.querySelector(".btn").addEventListener("click", showGalleri);
+
+  // function showGalleri() {
+  //   galleri.classList.toggle("hide");
+  // }
+</script>
 
 <style>
   a {
@@ -31,30 +66,154 @@ import "../styles/main.css";
     color: black;
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
-    
-  
-    
+    text-align: left;
   }
 
   div {
     display: flex;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-top: 10px;
     padding-right: 30px;
-    
-    
   }
 
   .time {
-    justify-self: end;
-    
+    /* display: flex;
+    justify-content: flex-end; */
+  }
+
+  .time1 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .flex_link {
+    display: flex;
+  }
+
+  .flex1 {
     
   }
 
   span {
-    color: black;
+    color: white;
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
+  }
+
+  button {
+    border: none;
+    background-color: #eae1e1;
+  }
+
+  button h2 {
+    color: #a14343;
+  }
+
+ 
+
+  h2:hover {
+    color: #d3726b;
+  }
+
+  .button {
+    display: flex;
+    /* justify-content: flex-start; */
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+
+  .box {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .button:hover {
+    background: #156b4c;
+    
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup {
+    margin: 70px auto;
+    margin-top: 15%;
+    padding: 20px;
+    background: #d3726b;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #ffdddd;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+
+.h3_pop {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-size: 25px;
+  
+}
+
+.p_pop {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+.time_pop {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-size: 15px;
+
+}
+
+  @media screen and (max-width: 700px) {
+    .box {
+      width: 70%;
+    }
+    .popup {
+      width: 70%;
+    }
   }
 </style>
