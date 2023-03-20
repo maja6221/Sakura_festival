@@ -7,9 +7,11 @@
      <label for="dropdown"></label>
       <select id="dropdown">
         <option value="">Restaurants</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="option1">(1-5) Selfish</option>
+        <option value="option2">(6-11) Sushi stop</option>
+        <option value="option3">(12-14) Sticks and sushi</option>
+        <option value="option4">(1-5) Banzai</option>
+                <option value="option5">(12-14) Saito</option>
       </select>
     </form>
 </div>
@@ -22,9 +24,9 @@
      <label for="dropdown"></label>
       <select id="dropdown">
         <option value="">Food & Drinks</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="option1">(13-17) Sing Tehus</option>
+        <option value="option2">(18-20) Andersen Bakery </option>
+        <option value="option3">(13-17) Seidokan</option>
       </select>
     </form>
 </div>
@@ -36,9 +38,11 @@
      <label for="dropdown"></label>
       <select id="dropdown">
         <option value="">Shops</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="option1">(21-26) Wazakka Tento-ya</option>
+        <option value="option2">(21-23) De Japanske Haver </option>
+        <option value="option3">(33-35) KROMKendama</option>
+        <option value="option4">(33-35) Hizokko</option>
+        
       </select>
     </form>
 </div>
@@ -50,9 +54,10 @@
      <label for="dropdown"></label>
       <select id="dropdown">
         <option value="">Aktivities</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="option1">(30-32) Idrætshøjskolen Bosei</option>
+        <option value="option2">(30-32) Foreningen Japanske Haver</option>
+        <option value="option3">(27-28) Naxos Denmark</option>
+                <option value="option4">(27-28) Kaatsu Fitness</option>
       </select>
     </form>
 </div>
@@ -64,12 +69,13 @@
   img{100%}
   .grid_ {
    display: grid;
-   grid-template-columns: 1fr 4fr;
+   grid-template-columns: 1fr 2fr;
    max-width: 20rem;
  margin-left: auto;
  margin-right: auto;
 
    margin-bottom: 1rem;
+
  
  
 
@@ -97,9 +103,38 @@ width: 12rem;
     font-size: 16px;
     color: white;
   }
-  .kategori{margin-top: 2rem;}
+  .kategori{margin-top: 2rem;
+  width: 100%;}
+  
   img{width: 100%;
   min-width: 2rem;}
+@media (max-width: 900px) {
+  .kategori {
+    display: grid;
+order: ;    gap: 1rem;
+    margin-top: 35px;
+   padding-bottom: 1rem;
+    width: 100%;
+   } 
+  
 
+     .select {
+  padding-top: 0.5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-bottom: 0.5rem;
+margin-top: 1 rem;
+width: 1rem;
+
+    font-size: 8px;
+    border: none;
+  background-color: #156B4C;
+  margin-left: 3rem
+
+
+
+  }
+
+  }  
 
 </style>
