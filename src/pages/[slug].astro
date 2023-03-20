@@ -1,0 +1,26 @@
+---
+import Navigation from "../../komponenter/Navigation.astro";
+
+export async function getStaticPaths() {
+    
+const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
+
+// "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlldG1ydW5vdGpyZ3pnbWNjaHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MjE2MjksImV4cCI6MTk5NDI5NzYyOX0.3nyW3iCZSlvah2mVwALnccNLM39VwIq4g5xXUpR9L5g"
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlldG1ydW5vdGpyZ3pnbWNjaHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MjE2MjksImV4cCI6MTk5NDI5NzYyOX0.3nyW3iCZSlvah2mVwALnccNLM39VwIq4g5xXUpR9L5g",
+  },
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
+
+return data.map((restaurants) => ({
+params: {slug: restaurants.slug }, 
+props: {restaurants },
+}));
+}
+
+const {restaurants} = Astro.props;
+---
