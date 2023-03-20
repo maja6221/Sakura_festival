@@ -43,7 +43,11 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">Main Stage</h2>
           <hr class="hr1" />
-          {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {
+            MainStage.map((restaurant) => (
+              <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />
+            ))
+          }
         </section>
         <section>
           <h2 class="venue">Second Stage</h2>
@@ -53,7 +57,11 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">On the Lawn</h2>
           <hr class="hr1" />
-          {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {
+            On_the_lawn.map((restaurant) => (
+              <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />
+            ))
+          }
         </section>
         <section>
           <img class="logo" src="Billeder/logo.webp" alt="" />
@@ -63,8 +71,6 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
   </body>
   <Footer>
     <style>
-
-   
       .logo {
         width: 130px;
         height: 130px;
