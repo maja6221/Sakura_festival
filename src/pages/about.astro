@@ -10,13 +10,121 @@ import Footer from "../komponenter/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
     <title>About us</title>
   </head>
   <body>
     <Navigation />
-    <h1>About us</h1>
-    <main></main>
+
+    <main>
+      <h1 class="Overskrift1">Sakura Festival</h1>
+      <p class="Tekst1">
+        The Committee of the Copenhagen Sakura Festival was established in
+        February, 2008 to arrange the cultural event Copenhagen Sakura Festival
+        with the help of the Japanese Embassy in Denmark, the Municipality of
+        Copenhagen and other Japan-related cultural and private organizations.
+      </p>
+
+      <div class="Billede">
+        <img src="Billeder/image7.webp" alt="Sakura Festival" />
+      </div>
+
+      <div class="redboks">
+        <div class="Billede2"><img src="Billeder/image8.webp" alt="Mad" /></div>
+
+        <h1 class="Overskrift2">Sakura Festivals Motivation</h1>
+
+        <p class="Tekst2">
+          In Japan people love and admire Sakura blossom and almost everybody go
+          out to enjoy its beauty together with families, friends, lovers,
+          office-mates and so forth wherever and whenever Sakura bloom. Once a
+          year Sakura connects people and people meet people under Sakura trees.
+          It is also the utmost and fundamental goal of the Committee.
+        </p>
+      </div>
+
+      <h1 class="Overskrift3">How It Started</h1>
+      <p class="Tekst3">
+        The original idea came from the noble deed of donation of 200 cherry
+        blossom (Sakura) trees by Mr. Seiichi Takaki, President of Andersen
+        Institute of Bread & Life, the holding company of Andersen Group of
+        Hiroshima City, and the employees of the company. The donated Sakura
+        trees were planted in Langelinie Park. Mr. Takaki who is Honorary Consul
+        of Denmark was appointed to the honorable position of ambassador of H.C.
+        Andersen on the occasion of the 200th anniversary of H.C. Andersen’s
+        birthday in 2005.
+      </p>
+
+      <div class="Billede">
+        <img src="Billeder/image10.webp" alt="blomster" />
+      </div>
+    </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .Billede {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    padding: 2rem;
+  }
+
+  .Billede2 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    padding: 2rem;
+  }
+
+  .Overskrift1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .Overskrift2 {
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .Overskrift3 {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .Tekst1 {
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .Tekst2 {
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .Tekst3 {
+    margin-left: 2rem;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+</style>
