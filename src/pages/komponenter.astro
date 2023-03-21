@@ -1,0 +1,38 @@
+---
+import Navigation from "../komponenter/Navigation.astro";
+import Footer from "../komponenter/Footer.astro";
+import Backdrop from "../komponenter/Backdrop.astro";
+import BoothListe from "../komponenter/Booth_liste.astro";
+import Carusel from "../komponenter/Carusel.astro";
+import Kategori from "../komponenter/Kategori.astro";
+import Opacity from "../komponenter/Opacity.astro";
+import Pop from "../komponenter/Pop.astro";
+import ProgramListe from "../komponenter/program_liste.astro";
+import Timer from "../komponenter/Timer.astro";
+import Video from "../komponenter/Video.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <title>Forside</title>
+  </head>
+  <body>
+    <Navigation />
+    <main>
+      <Backdrop />
+      <BoothListe />
+      <Carusel />
+      <Kategori />
+      <Opacity />
+      <Pop />
+      <ProgramListe />
+      <Timer />
+      <Video />
+    </main>
+  </body>
+  <Footer />
+</html>
