@@ -20,6 +20,17 @@ const response = await fetch(url, options);
 const data = await response.json();
 
 const MainStage = data.filter((event) => event.venue === "MainStage");
+MainStage.sort(compare);
+
+function compare(a, b) {
+  if (a.time < b.time) {
+    return -1;
+  }
+  if (a.time > b.time) {
+    return 1;
+  }
+  return 0;
+}
 const SecondStage = data.filter((event) => event.venue === "SecondStage");
 const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
 ---
@@ -43,34 +54,34 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">Main Stage</h2>
           <hr class="hr1" />
-          {MainStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {MainStage.map((restaurant) => <ProgramListe link={`/program/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
         </section>
         <section>
           <h2 class="venue">Second Stage</h2>
           <hr class="hr1" />
-          {SecondStage.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {SecondStage.map((restaurant) => <ProgramListe link={`/program/${restaurant.id}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
         </section>
         <section>
           <h2 class="venue">On the Lawn</h2>
           <hr class="hr1" />
-          {On_the_lawn.map((restaurant) => <ProgramListe link={`/komponenter/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {On_the_lawn.map((restaurant) => <ProgramListe link={`/program/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
         </section>
         <section>
-          <img class="logo" src="Billeder/logo.webp" alt="" />
+          <img class="logo" src="Billeder/logo.png" alt="" />
         </section>
       </main>
     </center>
+    <p></p>
   </body>
   <Footer>
     <style>
-
-   
       .logo {
         width: 130px;
         height: 130px;
         position: absolute;
         top: 135%;
         left: 1100px;
+        overflow: hidden;
       }
       main {
         display: grid;
@@ -134,7 +145,15 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
           background-color: #eae1e1;
           width: 80%;
           padding-top: 30px;
-          padding-bottom: 60px;
+          padding-bottom: 200px;
+        }
+        .logo {
+          width: 130px;
+          height: 130px;
+          position: absolute;
+          top: 207%;
+          left: 190px;
+          overflow: hidden;
         }
       }
     </style>
