@@ -1,7 +1,7 @@
 ---
 import { Debug } from "astro/components";
 import "../styles/main.css";
-import Navigation from "../komponenter/Navigation.astro";
+import Navigation1 from "../komponenter/Navigation1.astro";
 import Footer from "../komponenter/Footer.astro";
 import ProgramListe from "../komponenter/program_liste.astro";
 
@@ -43,7 +43,7 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
     <title>Program1</title>
   </head>
   <body>
-    <Navigation />
+    <Navigation1 />
     <h1 class="h1_dato">Saturday 22.04.2023</h1>
     <h2 class="h2_dato">The program for this day</h2>
     <center>
@@ -148,7 +148,7 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
           width: 130px;
           height: 130px;
           position: absolute;
-          top: 207%;
+          top: 235%;
           left: 190px;
           overflow: hidden;
         }
