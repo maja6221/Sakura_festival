@@ -52,28 +52,30 @@ const { restaurant } = Astro.props;
         <div id="popup1" class="overlay">
           <div class="popup">
             <img src={restaurant.image} alt="" />
-            <p class="p_pop">{restaurant.description} <span class="span_pop"> - </span>{restaurant.venue}</p>
+            <p class="p_pop">{restaurant.description} <span class="span_pop"> -</span>{restaurant.venue}</p>
 
             <div class="time">
               <p class="time_pop">{restaurant.time} <span class="span_pop"> -</span> {restaurant.time_stop}</p>
             </div>
-            <p>{restaurant.about}</p>
+            <div class="tekst">
+              <p>{restaurant.about}</p>
+            </div>
           </div>
         </div>
       </main>
     </center>
-
-    <p></p>
-
-    <Footer />
   </body>
+
+  <p></p>
+
+  <Footer />
 </html>
 
 <style>
-
   .billede {
-    width: 120%;
+    width: 90%;
     display: block;
+    padding-top: 22px;
   }
   .h3 {
     font-size: 40px;
@@ -113,15 +115,21 @@ const { restaurant } = Astro.props;
     font-size: 20px;
   }
 
+  .p_pop {
+    font-family: "Quicksand", sans-serif;
+    color: black;
+    font-size: 20px;
+  }
+
   main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     text-align: justify;
     padding-left: 3%;
     background-color: #eae1e1;
     width: 80%;
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 62px;
   }
 
   body {
@@ -130,8 +138,55 @@ const { restaurant } = Astro.props;
 
   h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 75px;
     font-family: "Quicksand", sans-serif;
     color: #156b4c;
+  }
+
+  #popup1 {
+    padding-left: 5%;
+  }
+
+  .tekst {
+    font-family: "Noto Sans Javanese";
+    font-size: 13.5px;
+    color: black;
+    padding-right: 67px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 80%;
+      padding-top: 22px;
+      padding-bottom: 40px;
+    }
+
+    .billede {
+      width: 80%;
+      display: block;
+      padding-top: 12px;
+      padding-left: 5%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 56px;
+      font-family: "Quicksand", sans-serif;
+      color: #156b4c;
+    }
+
+    .p_pop {
+      font-size: 17px;
+    }
+
+    .tekst {
+      font-size: 11px;
+    }
+
+    .time_pop {
+      font-size: 16px;
+    }
   }
 </style>
