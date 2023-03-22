@@ -10,56 +10,54 @@ import Footer from "../komponenter/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Merriweather&family=Nunito+Sans:wght@200;400&family=Oswald&family=Prosto+One&family=Quicksand:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet" />
     <title>About us</title>
   </head>
   <body>
     <Navigation1 />
 
     <main>
-      <h1 class="Overskrift1">Sakura Festival</h1>
-      <p class="Tekst1">
-        The Committee of the Copenhagen Sakura Festival was established in
-        February, 2008 to arrange the cultural event Copenhagen Sakura Festival
-        with the help of the Japanese Embassy in Denmark, the Municipality of
-        Copenhagen and other Japan-related cultural and private organizations.
-      </p>
+      <div class="div1">
+        <div>
+          <h1 class="Overskrift1">Sakura Festival</h1>
+          <p class="Tekst1">
+            The Committee of the Copenhagen Sakura Festival was established in February, 2008 to arrange the cultural event Copenhagen Sakura Festival with the help of the Japanese Embassy in Denmark, the Municipality of Copenhagen and other Japan-related cultural and private
+            organizations.
+          </p>
+        </div>
 
-      <div class="Billede">
-        <img src="Billeder/image7.webp" alt="Sakura Festival" />
+        <div>
+          <img class="Billede1" src="Billeder/img6.webp" alt="Sakura Festival" />
+        </div>
+      </div>
+      <div class="red">
+        <div class="div2">
+          <div>
+            <img class="Billede2" src="Billeder/img5.webp" alt="Mad" />
+          </div>
+          <div>
+            <h1 class="Overskrift2">Sakura Festivals Motivation</h1>
+
+            <p class="Tekst2">
+              In Japan people love and admire Sakura blossom and almost everybody go out to enjoy its beauty together with families, friends, lovers, office-mates and so forth wherever and whenever Sakura bloom. Once a year Sakura connects people and people meet people under
+              Sakura trees. It is also the utmost and fundamental goal of the Committee.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="redboks">
-        <div class="Billede2"><img src="Billeder/image8.webp" alt="Mad" /></div>
+      <div class="div3">
+        <div>
+          <h1 class="Overskrift3">How It Started</h1>
+          <p class="Tekst3">
+            The original idea came from the noble deed of donation of 200 cherry blossom (Sakura) trees by Mr. Seiichi Takaki, President of Andersen Institute of Bread & Life, the holding company of Andersen Group of Hiroshima City, and the employees of the company. The donated
+            Sakura trees were planted in Langelinie Park. Mr. Takaki who is Honorary Consul of Denmark was appointed to the honorable position of ambassador of H.C. Andersen on the occasion of the 200th anniversary of H.C. Andersen’s birthday in 2005.
+          </p>
+        </div>
 
-        <h1 class="Overskrift2">Sakura Festivals Motivation</h1>
-
-        <p class="Tekst2">
-          In Japan people love and admire Sakura blossom and almost everybody go
-          out to enjoy its beauty together with families, friends, lovers,
-          office-mates and so forth wherever and whenever Sakura bloom. Once a
-          year Sakura connects people and people meet people under Sakura trees.
-          It is also the utmost and fundamental goal of the Committee.
-        </p>
-      </div>
-
-      <h1 class="Overskrift3">How It Started</h1>
-      <p class="Tekst3">
-        The original idea came from the noble deed of donation of 200 cherry
-        blossom (Sakura) trees by Mr. Seiichi Takaki, President of Andersen
-        Institute of Bread & Life, the holding company of Andersen Group of
-        Hiroshima City, and the employees of the company. The donated Sakura
-        trees were planted in Langelinie Park. Mr. Takaki who is Honorary Consul
-        of Denmark was appointed to the honorable position of ambassador of H.C.
-        Andersen on the occasion of the 200th anniversary of H.C. Andersen’s
-        birthday in 2005.
-      </p>
-
-      <div class="Billede">
-        <img src="Billeder/image10.webp" alt="blomster" />
+        <div>
+          <img class="Billede3" src="Billeder/img3.webp" alt="blomster" />
+        </div>
       </div>
     </main>
     <Footer />
@@ -67,64 +65,59 @@ import Footer from "../komponenter/Footer.astro";
 </html>
 
 <style>
-  .Billede {
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    grid-template-columns: 1fr 1fr;
+
+   main {
+    margin-inline: 10%;
+   }
+  .div1 {
     display: grid;
-    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+    margin-inline: 5%;
+    padding-top: 7%;
+    padding-bottom: 7%;
   }
 
+  .div2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   margin-inline: 5%;
+  }
+
+  .div3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-inline: 5%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+  }
+
+  .red {
+    background-color:  #d3726b7b ;
+    
+    padding-top: 3%;
+    padding-bottom: 3%;
+ 
+  }
+
+
+  .Billede1 {
+    width: 80%;
+    margin-left: auto;
+  }
   .Billede2 {
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-    padding: 2rem;
+    width: 80%;
+  }
+  .Billede3 {
+    width: 80%;
+    margin-left: auto;
   }
 
-  .Overskrift1 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+  h1 {
+    font-family: "quicksand";
+    padding-bottom: 5%;
   }
 
-  .Overskrift2 {
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-  }
-
-  .Overskrift3 {
-    margin-top: 1rem;
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-  }
-
-  .Tekst1 {
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-  }
-
-  .Tekst2 {
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-  }
-
-  .Tekst3 {
-    margin-left: 2rem;
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+  p {
+    font-family: "Noto Sans Javanese";
   }
 </style>
