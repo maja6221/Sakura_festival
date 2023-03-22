@@ -4,7 +4,9 @@
 <section class="backdrop">
   <div class="back">
     <div class="back1">
-      <img class="img_backdrop" id="mobil_bag" src="Billeder/bag8.webp" alt="" />
+      <!-- <img class="img_backdrop" id="mobil_bag" src="Billeder/bag8.webp" alt="" /> -->
+      <img class="img_backdrop" id="mobil_bag" src="Billeder/blomst_sakura.webp" alt="" />
+      <img class="img_backdrop" id="mobil_bag1" src="Billeder/firkant1.webp" alt="" />
       <h1 class="h1_index">Copenhagen <br /> Sakura Festival <br /> 2023</h1>
     </div>
   </div>
@@ -20,7 +22,21 @@
 
 <style>
 
-    
+    #mobil_bag1 {
+      width: 80%;
+      height: 68%;
+      position: absolute;
+      top: 30%;
+      z-index: -1;
+    }
+
+    #mobil_bag {
+     width: 80%;
+      z-index: -1;
+      margin-right: auto;
+    }
+
+
   .img_backdrop {
     width: 100%;
   }
@@ -73,19 +89,28 @@
   }
 
   @media (max-width: 600px) {
-    #mobil_bag {
-      display: none;
+ 
+
+   #mobil_bag {
+    width: 90%;
+    height: 68%;
+    margin-left: auto;
+    position: absolute;
+    overflow: hidden;
+    top: 30%;
+    left: 10%;
+   }
+
+   #mobil_bag1 {
+      width: 80%;
+      height: 68%;
+      
+      
     }
 
-    .img_backdrop {
-      display: none;
-    }
-
-    .img_backdrop2 {
-      width: 100%;
     
-     
-    }
+    
+
 
     .back {
       place-self: center;
