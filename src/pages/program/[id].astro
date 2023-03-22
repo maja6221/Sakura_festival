@@ -2,6 +2,7 @@
 import Debug from "astro/components/Debug.astro";
 import Navigation from "../../komponenter/Navigation.astro";
 import Footer from "../../komponenter/Footer.astro";
+import Knap from "../../komponenter/Knap.astro";
 
 export async function getStaticPaths() {
   const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
@@ -60,8 +61,10 @@ const { restaurant } = Astro.props;
             <div class="tekst">
               <p>{restaurant.about}</p>
             </div>
+            <Knap />
           </div>
         </div>
+      
       </main>
     </center>
   </body>
