@@ -48,11 +48,11 @@ const { restaurant } = Astro.props;
     <h1>{restaurant.name}</h1>
     <center>
       <main>
-        <img src={`/Billeder/${restaurant.image}`} width="100%" alt="" />
+        <img class="billede" src={`/Billeder/${restaurant.image}`} alt="" />
         <div id="popup1" class="overlay">
           <div class="popup">
             <img src={restaurant.image} alt="" />
-            <p class="p_pop">{restaurant.description} <span class="span_pop"> -</span>{restaurant.venue}</p>
+            <p class="p_pop">{restaurant.description} <span class="span_pop"> - </span>{restaurant.venue}</p>
 
             <div class="time">
               <p class="time_pop">{restaurant.time} <span class="span_pop"> -</span> {restaurant.time_stop}</p>
@@ -70,6 +70,11 @@ const { restaurant } = Astro.props;
 </html>
 
 <style>
+
+  .billede {
+    width: 120%;
+    display: block;
+  }
   .h3 {
     font-size: 40px;
   }
