@@ -1,14 +1,12 @@
 ---
 import { Debug } from "astro/components";
 import "../styles/main.css";
-// import ProgramListe from "../komponenter/Program_liste.astro";
 import Navigation from "../komponenter/Navigation.astro";
 import Footer from "../komponenter/Footer.astro";
 import ProgramListe from "../komponenter/program_liste.astro";
 
 const url = "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants";
 
-// "https://yetmrunotjrgzgmcchxy.supabase.co/rest/v1/restaurants?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlldG1ydW5vdGpyZ3pnbWNjaHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3MjE2MjksImV4cCI6MTk5NDI5NzYyOX0.3nyW3iCZSlvah2mVwALnccNLM39VwIq4g5xXUpR9L5g"
 
 const options = {
   headers: {
@@ -54,7 +52,13 @@ const On_the_lawn = data.filter((event) => event.venue === "On_the_lawn");
         <section>
           <h2 class="venue">Main Stage</h2>
           <hr class="hr1" />
-          {MainStage.map((restaurant) => <ProgramListe link={`/program/${restaurant.id}`} image={`/thumbs/${restaurant.image}`} name={restaurant.name} description={restaurant.description} time={restaurant.time} time_stop={restaurant.time_stop} />)}
+          {MainStage.map((restaurant) => 
+          <ProgramListe link={`/program/${restaurant.id}`} 
+          image={`/thumbs/${restaurant.image}`} 
+          name={restaurant.name} 
+          description={restaurant.description} 
+          time={restaurant.time} 
+          time_stop={restaurant.time_stop} />)}
         </section>
         <section>
           <h2 class="venue">Second Stage</h2>
